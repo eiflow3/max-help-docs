@@ -215,6 +215,150 @@
   color: #5f647c;
 }
 
+.doc-page__header {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(148, 151, 173, 0.24);
+  margin-bottom: 0.9rem;
+}
+
+.doc-page__titleRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.doc-page__title {
+  margin: 0;
+}
+
+.doc-page__subtitle {
+  margin: 0.35rem 0 0;
+}
+
+.doc-page__badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.doc-badge {
+  font-size: 0.75rem;
+  border: 1px solid rgba(148, 151, 173, 0.52);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  background: rgba(222, 221, 240, 0.55);
+  color: #2f3551;
+}
+
+.doc-list {
+  margin: 0.55rem 0 0;
+}
+
+.doc-steps {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.doc-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.9em;
+  background: rgba(29, 31, 43, 0.06);
+  border: 1px solid rgba(148, 151, 173, 0.35);
+  padding: 0.1rem 0.35rem;
+  border-radius: 8px;
+}
+
+.callout {
+  margin-top: 0.95rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 151, 173, 0.42);
+  background: linear-gradient(130deg, rgba(243, 242, 252, 0.95), rgba(238, 237, 247, 0.75));
+}
+
+.callout__title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.callout__content :first-child {
+  margin-top: 0;
+}
+
+.callout__content :last-child {
+  margin-bottom: 0;
+}
+
+.img-ph {
+  margin: 0.95rem 0 0;
+}
+
+.img-ph__frame {
+  border-radius: 14px;
+  border: 1px dashed rgba(148, 151, 173, 0.75);
+  background: rgba(248, 247, 255, 0.8);
+  padding: 0.85rem;
+}
+
+.img-ph__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: #232948;
+}
+
+.img-ph__filename {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #4f5673;
+}
+
+.img-ph__body {
+  margin-top: 0.6rem;
+}
+
+.img-ph__desc {
+  margin: 0;
+}
+
+.img-ph__bullets {
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.img-ph__hint {
+  margin: 0.55rem 0 0;
+}
+
+.subtabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.subtab {
+  border: 1px solid rgba(148, 151, 173, 0.4);
+  background: rgba(255, 255, 255, 0.85);
+  color: #222839;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.subtab.active {
+  background: rgba(157, 56, 248, 0.14);
+  border-color: rgba(157, 56, 248, 0.55);
+  color: #4b1bb3;
+}
+
 @media (max-width: 640px) {
   .app {
     width: calc(100% - 0.8rem);
