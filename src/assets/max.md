@@ -48,7 +48,7 @@ Best for branding and image-editing workflows, plus routing you to the right spe
 
 ### What Max routes to other specialists
 
-- Product catalog, product SEO, and product description workflows -> Max Merchandiser
+- Product catalog, SEO, descriptions, and reels route to Max Merchandiser
 - Blog creation and rewriting workflows -> Max Copywriter
 - Static page creation/editing and menu/navigation workflows -> Max Builder
 - Analytics and business performance workflows -> Max Insights
@@ -71,15 +71,52 @@ How it works:
 
 Max can continue from the latest generated result, so each step builds on the previous output instead of forcing you to start over every time.
 
-### Automatic save to Media Library
+### Visual Intelligence: Explaining your images
 
-Any image Max generates or edits is automatically saved to your Media Library.
+Max can now "see" and analyze the contents of your images. When you attach an image or pick one from your library, you can ask Max to explain what is in it.
 
-This means you can:
+This is especially helpful for:
 
-- Reuse generated outputs in future prompts
-- Apply them to product listings and page content later
-- Keep a single place to manage approved image assets
+- **Automatic Tagging**: Max identifies objects, colors, and styles.
+- **SEO Alignment**: Max can suggest if an image matches your product's keywords.
+- **Context Sharing**: If Max explains an image in one chat turn, other specialists (like Max Merchandiser) will understand that context when generating descriptions or reels.
+
+### Media Library Integration & Attachments
+
+You can attach images directly from your computer or pick them from your **Media Library** via the selection menu.
+
+Any image Max generates or identifies is automatically saved to your Media Library. This means you can:
+
+- **Cross-Reference**: Use a generated logo in a Builder prompt.
+- **Unified Catalog**: Apply edited product photos directly to listings.
+- **Persistent Context**: Sub-agents use your library as a shared visual memory.
+
+## Advanced Analytics (Max Insights)
+
+Max Insights uses a dedicated suite of tools to analyze your store data. It can identify patterns that human observation might miss.
+
+### Sales Intelligence
+
+Max can break down your revenue using several dimensions:
+
+- **Sales by Category**: Identify which product groups are driving the most revenue.
+- **Discount Performance**: See which discount codes are most effective and how they impact margins.
+- **Top Sales Periods**: Identify peak buying times across various timeframes (Daily, Weekly, Monthly).
+
+### Traffic & Content Analysis
+
+Understand how users find and interact with your store:
+
+- **Traffic Sources**: See where your visitors are coming from (Direct, Social, Search).
+- **Content Engagement**: Identify your **Most Visited Blogs** and **Most Visited Products**.
+- **User Breakdown**: Differentiate between broad visitors and converted customers.
+
+### Visual Data & Charting
+
+Max doesn't just give you numbers; it generates visual reports.
+
+- **Dynamic Charts**: Ask Max to "show me a chart of my sales this month" to get a visual representation.
+- **Date Range Filtering**: Every insight can be filtered by specific date ranges (Last 7 days, 30 days, 90 days, or Custom).
 
 ## Onboarding Assistant
 Best for first-time store setup.
@@ -87,7 +124,7 @@ Best for first-time store setup.
 - Set store name and subdomain
 - Add slogan and industry
 - Generate or upload your logo
-- Build your first Home, About, and Contact pages
+- Build your first Home, About, Contact, and key policy pages
 
 ### Ask this assistant when you want to
 
@@ -114,15 +151,19 @@ Best for analytics and business performance questions.
 ## Max Merchandiser
 Best for product listing and catalog optimization.
 
-- Create product entries
-- Improve product descriptions
-- Generate SEO titles and meta descriptions
-- Update pricing, stock, and product media
+- **Create product entries** — Build new listings from scratch with AI-guided categories and identity fields (SKU, brand, and slug).
+- **Improve content** — Generate high-converting product descriptions and SEO-optimized meta tags by defining your target audience and key benefits.
+- **Manage media** — Upload and organize product images and videos directly.
+- **Generate Product Reels** — Create engaging AI-powered video reels with custom business goals (awareness, messages, sales) and calls-to-action.
+- **Update store controls** — Adjust pricing, stock levels, and physical measurements (dimensions and weight) in real-time.
 
 ### Ask this assistant when you want to
 
-- Improve conversion on product pages
-- Prepare better listings faster
+- Improve conversion on product pages by tailoring descriptions for specific target audiences.
+- Prepare better listings faster by automating SEO keyword research and meta-tagging.
+- Launch a new product line with brand-consistent details and automatic SKU generation.
+- Create social-ready video content (Product Reels) with business-driven CTAs.
+- Keep your catalog updated with precise measurements and inventory details directly from chat.
 
 ---
 
@@ -191,6 +232,10 @@ Available page generator options usually include:
 - About Us page
 - Contact Us page
 - Warranty page
+- Products page
+- Privacy Policy page
+- Return Policy page
+- Terms of Service page
 
 You can ask directly for a page, such as:
 
@@ -232,7 +277,7 @@ If you attach a page and Max replies that it is not supported, this usually mean
 What that message means:
 
 - The selected page cannot be directly edited in the current Max Builder workflow.
-- Max can still help with supported pages (for example Home, About Us, Contact Us, Warranty) and navigation/menu updates.
+- Max can still help with supported pages (for example Home, About Us, Contact Us, Warranty, Products, and Business Policies) and navigation/menu updates.
 - Max can still suggest layout or content improvements in chat, even when direct editing is blocked.
 
 What you can do next:
