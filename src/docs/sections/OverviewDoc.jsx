@@ -12,11 +12,12 @@ export function OverviewDoc() {
     >
       <div className="quick-grid">
         <article>
-          <h3>Branding and image setup</h3>
+          <h3>Branding and media setup</h3>
           <p>
-            Use <strong>Main Orchestrator</strong> for background removal, quality
-            enhancement, lighting adjustments, logo generation, and applying
-            branding assets to your store.
+            Use <strong>Main Orchestrator</strong> to set intent and keep context.
+            It now routes image editing to <strong>Max Image Editor</strong> and
+            social content tasks to <strong>Max Social Marketing</strong>, while
+            still handling logo generation and branding application.
           </p>
         </article>
         <article>
@@ -58,4 +59,3 @@ export function OverviewDoc() {
     </DocPage>
   );
 }
-

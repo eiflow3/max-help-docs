@@ -90,6 +90,8 @@ const App = () => {
 
   const tabs = [
     { id: "max", label: "Max Orchestrator", icon: <Sparkles className="tab-icon" /> },
+    { id: "image-editor", label: "Image Editor", icon: <FileImage className="tab-icon" /> },
+    { id: "social-marketing", label: "Social Marketing", icon: <Video className="tab-icon" /> },
     { id: "merchandiser", label: "Merchandiser", icon: <ShoppingBag className="tab-icon" /> },
     { id: "copywriter", label: "Copywriter", icon: <PenTool className="tab-icon" /> },
     { id: "builder", label: "Builder", icon: <Layout className="tab-icon" /> },
@@ -105,7 +107,9 @@ const App = () => {
             <div className="kicker">Main Hub</div>
             <h2>Prosperna Orchestrator</h2>
             <p>
-              Max is the central intelligence of your store. It handles core branding, image workflows, and routes complex tasks to specialists.
+              Max is the central intelligence of your store. It manages routing,
+              shared context, and branding setup, then delegates execution to
+              specialist agents.
             </p>
 
             <div className="doc-image-container">
@@ -115,17 +119,17 @@ const App = () => {
 
             <MaxFlow />
 
-            <h3 className="section-title">Core Branding & Images</h3>
+            <h3 className="section-title">Routing and Shared Context</h3>
             <div className="quick-grid">
               <article>
                 <Eye className="tab-icon" style={{ color: "var(--primary)" }} />
                 <h3>Visual Intelligence</h3>
-                <p>Max can analyze and explain the contents of any image you attach or pick from your library.</p>
+                <p>Max can analyze attached images and pass visual context to downstream specialists.</p>
               </article>
               <article>
                 <FileImage className="tab-icon" style={{ color: "#3b82f6" }} />
-                <h3>Media Library Integration</h3>
-                <p>Attach assets directly from your library to use in complex prompts.</p>
+                <h3>Specialist Handoff</h3>
+                <p>Image edits now route to Image Editor and social media creative routes to Social Marketing.</p>
               </article>
             </div>
 
@@ -137,8 +141,8 @@ const App = () => {
             <div className="quick-grid" style={{ marginTop: "1rem" }}>
               <article>
                 <ImageIcon className="tab-icon" style={{ color: "#ec4899" }} />
-                <h3>Chained Content</h3>
-                <p>Refine the same image across multiple turns (e.g., remove background, then add lifestyle scene).</p>
+                <h3>Branding Control</h3>
+                <p>Generate logo variants and apply selected assets directly to your store branding.</p>
               </article>
               <article>
                 <HardDrive className="tab-icon" style={{ color: "#10b981" }} />
@@ -149,8 +153,62 @@ const App = () => {
 
             <h3 className="section-title">Try These Prompts</h3>
             <div className="prompt-grid">
-              <PromptCard tag="Analysis" text="What is in this product image and how can I describe it for professional buyers?" />
-              <PromptCard tag="Editing" text="Clean up this product image and place it in a minimalist kitchen scene." />
+              <PromptCard tag="Routing" text="Route this request to the best specialist to turn my product photo into social creatives." />
+              <PromptCard tag="Analysis" text="What is in this product image and what specialist should I use next?" />
+            </div>
+          </motion.section>
+        );
+      case "image-editor":
+        return (
+          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="panel">
+            <div className="kicker">Media Specialist</div>
+            <h2>Max Image Editor</h2>
+            <p>Dedicated image editing specialist for cleanup, enhancement, and creative background composition.</p>
+
+            <div className="quick-grid">
+              <article>
+                <FileImage className="tab-icon" style={{ color: "var(--primary)" }} />
+                <h3>Core Image Edits</h3>
+                <p>Remove backgrounds, improve quality, and adjust lighting styles for product-ready images.</p>
+              </article>
+              <article>
+                <ImageIcon className="tab-icon" style={{ color: "#3b82f6" }} />
+                <h3>Scene Replacement</h3>
+                <p>Place products into generated or reference-based scenes while preserving product focus.</p>
+              </article>
+            </div>
+
+            <h3 className="section-title">Try These Prompts</h3>
+            <div className="prompt-grid">
+              <PromptCard tag="Cleanup" text="Remove this background and output a clean PNG with natural shadows." />
+              <PromptCard tag="Lifestyle" text="Place this product on a modern kitchen counter with warm natural lighting." />
+            </div>
+          </motion.section>
+        );
+      case "social-marketing":
+        return (
+          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="panel">
+            <div className="kicker">Growth Specialist</div>
+            <h2>Max Social Marketing</h2>
+            <p>Specialist for social-ready marketing assets, including campaign concepts and visual creative direction.</p>
+
+            <div className="quick-grid">
+              <article>
+                <Video className="tab-icon" style={{ color: "var(--primary)" }} />
+                <h3>Campaign Creative</h3>
+                <p>Generate social campaign ideas, hooks, and CTA angles tailored to awareness or conversion goals.</p>
+              </article>
+              <article>
+                <FileImage className="tab-icon" style={{ color: "#3b82f6" }} />
+                <h3>Tool Leasing</h3>
+                <p>Can borrow image editing capabilities for campaign assets without leaving the social workflow.</p>
+              </article>
+            </div>
+
+            <h3 className="section-title">Try These Prompts</h3>
+            <div className="prompt-grid">
+              <PromptCard tag="Campaign" text="Create a 7-day social campaign plan for this product with awareness and sales goals." />
+              <PromptCard tag="Creative" text="Turn this product image into 3 social post concepts with captions and CTA lines." />
             </div>
           </motion.section>
         );
@@ -164,8 +222,8 @@ const App = () => {
             <div className="quick-grid">
               <article>
                 <Video className="tab-icon" />
-                <h3>Product Reels</h3>
-                <p>AI-powered 8-second video synthesis for social awareness, sales, or direct engagement.</p>
+                <h3>Catalog Distribution</h3>
+                <p>Prepare product content so social and creative specialists can repurpose it consistently.</p>
               </article>
               <article>
                 <Search className="tab-icon" />
@@ -212,7 +270,7 @@ const App = () => {
             <div className="quick-grid">
               <article>
                 <h3>Refinement Loops</h3>
-                <p>Adjust headlines, body copy, or SEO metadata directly after generation.</p>
+                <p>Adjust headlines, body copy, or SEO metadata directly after generation, with updates written into Blog Writer widget fields.</p>
               </article>
               <article>
                 <h3>Draft Management</h3>
@@ -259,10 +317,33 @@ const App = () => {
             <h3 className="section-title">New: Page List Navigation</h3>
             <p className="muted">Switch between any existing store page directly from the Builder Menu to continue editing.</p>
 
+            <h3 className="section-title">Menu and Footer Editing</h3>
+            <div className="quick-grid">
+              <article>
+                <Layout className="tab-icon" style={{ color: "var(--primary)" }} />
+                <h3>Menu Editor Mode</h3>
+                <p>Manage navigation structure and design: links, order, layout, logo, colors, spacing, typography, and sticky behavior.</p>
+              </article>
+              <article>
+                <FileImage className="tab-icon" style={{ color: "#3b82f6" }} />
+                <h3>Footer Mode</h3>
+                <p>Open footer context, edit footer-only HTML/CSS, and optionally use verified links/store details for deterministic footer content.</p>
+              </article>
+            </div>
+
+            <h3 className="section-title">Legacy Migration and Publish Updates</h3>
+            <ul className="feature-list">
+              <FeatureItem icon={History} title="Legacy to Max Version" desc="Legacy page migrations create a new AI-editable page variant with a -max-version suffix." />
+              <FeatureItem icon={CheckCircle2} title="Approval Before Save" desc="Theme extraction and memory updates during migration now require explicit approval." />
+              <FeatureItem icon={ArrowRight} title="Publish Confirmation URL" desc="Publish responses include clearer success messaging and the full live page URL when available." />
+            </ul>
+
             <h3 className="section-title">Try These Prompts</h3>
             <div className="prompt-grid">
               <PromptCard tag="Creation" text="Build a 'Return Policy' page for my electronics store with a formal tone." />
               <PromptCard tag="Navigation" text="Add a new 'Special Offers' link to my header menu." />
+              <PromptCard tag="Footer" text="Open my footer editor and add contact details plus social links without changing page content." />
+              <PromptCard tag="Migration" text="Migrate my legacy About page to a Max-editable version and show me what changed before I approve." />
             </div>
           </motion.section>
         );

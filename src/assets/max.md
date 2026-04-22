@@ -18,6 +18,8 @@ You can switch agents directly in the chat input area.
 ### Agent options you will usually see
 
 - Max
+- Max Image Editor
+- Max Social Marketing
 - Max Insights
 - Max Copywriter
 - Max Builder
@@ -36,40 +38,28 @@ If your task changes, switch to the matching specialist before you type your nex
 ## Max Specialists
 
 ## Prosperna Main Orchestrator (Max)
-Best for branding and image-editing workflows, plus routing you to the right specialist.
+Best for routing, shared context, and branding setup.
 
-- Remove backgrounds from images
-- Enhance image quality
-- Adjust image lighting with style presets
-- Replace image backgrounds with generated scenes or reference images
+- Route requests to the most relevant specialist agent
+- Keep context synchronized across specialist handoffs
+- Analyze attached visuals to improve downstream prompts
 - Generate a base logo for your store
 - Generate favicon and wordmark logo variations
 - Apply selected logo and favicon to your store branding
 
 ### What Max routes to other specialists
 
-- Product catalog, SEO, descriptions, and reels route to Max Merchandiser
+- Image cleanup and scene generation workflows -> Max Image Editor
+- Social campaign creative and channel-ready assets -> Max Social Marketing
+- Product catalog, SEO, and product descriptions -> Max Merchandiser
 - Blog creation and rewriting workflows -> Max Copywriter
 - Static page creation/editing and menu/navigation workflows -> Max Builder
 - Analytics and business performance workflows -> Max Insights
 
 ### Ask this assistant when you want to
 
-- Clean up or improve product/brand images quickly
 - Create or update logo and favicon branding assets
-- Get routed to the correct specialist for non-branding tasks
-
-### Chained image editing in one chat
-
-You can refine the same image across multiple turns.
-
-How it works:
-
-1. Request the first transformation (for example, remove the background).
-2. After the result is returned, send a follow-up edit request (for example, place a new background scene).
-3. Continue with extra refinements like lighting style or quality enhancement.
-
-Max can continue from the latest generated result, so each step builds on the previous output instead of forcing you to start over every time.
+- Route to the correct specialist for image, social, content, page, or analytics tasks
 
 ### Visual Intelligence: Explaining your images
 
@@ -79,7 +69,33 @@ This is especially helpful for:
 
 - **Automatic Tagging**: Max identifies objects, colors, and styles.
 - **SEO Alignment**: Max can suggest if an image matches your product's keywords.
-- **Context Sharing**: If Max explains an image in one chat turn, other specialists (like Max Merchandiser) will understand that context when generating descriptions or reels.
+- **Context Sharing**: If Max explains an image in one chat turn, other specialists can
+  reuse that context when generating content.
+
+## Max Image Editor
+Best for dedicated image editing and enhancement workflows.
+
+- Remove backgrounds from images
+- Enhance image quality
+- Adjust image lighting with style presets
+- Replace image backgrounds with generated scenes or reference images
+
+### Ask this assistant when you want to
+
+- Clean up or improve product and brand images quickly
+- Run multi-step edits in a single conversation
+
+## Max Social Marketing
+Best for social campaign ideation and creative production flows.
+
+- Create social-ready campaign concepts and content direction
+- Produce post-ready creative angles aligned to business goals
+- Borrow image editing capabilities when campaign assets need visual changes
+
+### Ask this assistant when you want to
+
+- Turn product assets into social post ideas and campaign variants
+- Build goal-driven social creative tied to awareness or sales targets
 
 ### Media Library Integration & Attachments
 
@@ -154,7 +170,6 @@ Best for product listing and catalog optimization.
 - **Create product entries** — Build new listings from scratch with AI-guided categories and identity fields (SKU, brand, and slug).
 - **Improve content** — Generate high-converting product descriptions and SEO-optimized meta tags by defining your target audience and key benefits.
 - **Manage media** — Upload and organize product images and videos directly.
-- **Generate Product Reels** — Create engaging AI-powered video reels with custom business goals (awareness, messages, sales) and calls-to-action.
 - **Update store controls** — Adjust pricing, stock levels, and physical measurements (dimensions and weight) in real-time.
 
 ### Ask this assistant when you want to
@@ -162,7 +177,6 @@ Best for product listing and catalog optimization.
 - Improve conversion on product pages by tailoring descriptions for specific target audiences.
 - Prepare better listings faster by automating SEO keyword research and meta-tagging.
 - Launch a new product line with brand-consistent details and automatic SKU generation.
-- Create social-ready video content (Product Reels) with business-driven CTAs.
 - Keep your catalog updated with precise measurements and inventory details directly from chat.
 
 ---
@@ -178,7 +192,7 @@ Max Copywriter is backed by the **Blog Writer** experience: chat guides the step
 - **Titles and format** — Get title options once Max knows your topic, **post type** (how-to, listicle, opinion, case study, review, news, story, FAQ-style, behind-the-scenes, and similar), **style** (such as formal or conversational), **audience**, and **region**.
 - **SEO keywords and outline** — Receive primary and supporting keywords plus a section outline. Review and approve (or adjust in chat) before the final draft is written.
 - **Full post** — Generate the article at a length you choose (for example short, medium, or long-form ranges Max will confirm with you).
-- **Refinements** — After content exists in the Blog Writer panel, ask Max to change the **headline**, **article body**, or **SEO title / description** so updates line up with the fields you publish from.
+- **Refinements** — After content exists in the Blog Writer panel, ask Max to change the **headline**, **article body**, or **SEO title / description**. Max applies these updates directly to widget fields so you do not need to copy-paste.
 
 ### How the flow usually goes
 
@@ -192,6 +206,11 @@ When Max asks you to pick among set choices (tone, length, format, and similar),
 ### Finishing in the Blog Writer panel
 
 When the draft is ready, use the panel to **save as a draft** (edit later in your blog tools) or **publish** when you are satisfied. Max can still help you revise wording after the draft is shown.
+
+### Direct widget edits (no copy-paste)
+
+For post-generation revisions, Max updates Blog Writer fields directly
+(title, content/body, SEO meta title, SEO meta description).
 
 ### Ask this assistant when you want to
 
@@ -270,6 +289,22 @@ How to use it:
 4. Select the page you want to edit.
 5. Continue editing with Visual Editor, Reorder, or Select Element.
 
+### Menu and footer editing modes
+
+- **Menu Editor mode**: For menu/navigation requests, Max opens Menu Editor and can update item structure, link targets, layout, logo, sticky behavior, and style settings.
+- **Footer mode**: For footer requests, Max opens footer context first, then applies footer-only edits.
+- If a footer does not exist yet, Max may ask for confirmation before generating an initial footer draft.
+
+### Custom page support
+
+Max Builder can open supported custom pages by slug.
+- If open is blocked, Max returns explicit guidance so you can recover cleanly.
+- Publish validates provided slugs; if a slug is stale or missing, Max can create
+  a unique slug first, then continue publish.
+- Product-listing cards now support a share action (native share, clipboard
+  fallback, or disabled state when no URL exists).
+- Example: "Open my custom page with slug `summer-sale` and improve the hero."
+
 ### Limitation: legacy pages are not supported
 
 If you attach a page and Max replies that it is not supported, this usually means the page is a legacy page created in the old Page Builder (GrapesJS).
@@ -283,8 +318,16 @@ What that message means:
 What you can do next:
 
 1. Open Page List and pick a supported page.
-2. Ask Max to create or improve a supported page version.
+2. Ask Max to migrate the legacy page to a new AI-editable version.
 3. Ask Max for copy/layout guidance, then apply the changes manually if needed.
+
+### Legacy migration behavior
+
+When migration is available, Max Builder now:
+
+- creates a separate migrated page with a **`-max-version`** suffix to avoid slug/name conflicts
+- proposes extracted theme/design memory first before persisting it
+- waits for your approval before saving migration-related memory changes
 
 #### 1) Visual Editor
 
@@ -351,6 +394,13 @@ How to use it:
 Pro tip:
 
 - If Max edits the wrong area, re-select the exact element and resend your prompt.
+
+### Publish confirmation behavior
+
+When a page publish succeeds, Max may return:
+
+- a clearer success message in chat
+- the full live page URL (when domain/store mapping is available)
 
 ---
 

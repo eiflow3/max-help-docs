@@ -1,21 +1,20 @@
 import React from 'react';
 import { DocPage } from '../shared/DocPage';
 import { Callout } from '../shared/Callout';
-import { ImagePlaceholder } from '../shared/ImagePlaceholder';
+import imageAttachment from '../../assets/image-attachment.png';
 
 export function MainOrchestratorDoc() {
   return (
     <DocPage
       title="Prosperna Main Orchestrator (Max)"
-      subtitle="Handles branding and image workflows directly, and routes you to specialists."
+      subtitle="Coordinates intent routing and branding setup, then delegates to specialists."
       badges={['Orchestrator']}
     >
       <h3>Direct capabilities</h3>
       <ul className="doc-list">
-        <li>Remove image backgrounds</li>
-        <li>Enhance image quality</li>
-        <li>Adjust image lighting using style presets</li>
-        <li>Replace image backgrounds with generated or reference scenes</li>
+        <li>Classify request intent and route to the correct specialist</li>
+        <li>Carry context between specialist handoffs in one conversation</li>
+        <li>Analyze attached images for visual context and product cues</li>
         <li>Generate a base logo</li>
         <li>Generate favicon and wordmark variations</li>
         <li>Apply selected logo and favicon to store branding</li>
@@ -23,6 +22,8 @@ export function MainOrchestratorDoc() {
 
       <Callout title="Routing responsibilities" variant="info">
         <ul className="doc-list">
+          <li>Image editing and cleanup workflows → Max Image Editor</li>
+          <li>Social marketing creative workflows → Max Social Marketing</li>
           <li>Analytics and performance coaching → Max Insights</li>
           <li>Product catalog, SEO meta, product descriptions → Merchandiser</li>
           <li>Blog drafting workflow → Copywriter</li>
@@ -30,14 +31,13 @@ export function MainOrchestratorDoc() {
         </ul>
       </Callout>
 
-      <ImagePlaceholder
-        title="Media Library attachment (for image tools)"
-        filenameSuggestion="orchestrator_media-library-attach.png"
-        description="Screenshot the Media Library modal and an image selected/attached to the Max message composer."
-        bullets={['Media Library modal visible', 'Selected image highlighted', 'Composer shows attachment']}
-        sourceHint="Capture source: prosperna1 UI."
-      />
+      <div className="doc-image-container">
+        <img src={imageAttachment} alt="Composer with attached image and tools menu" className="doc-image" />
+        <p className="muted" style={{ fontSize: '0.85rem', marginTop: '0.75rem' }}>
+          Attached-image reference: preview thumbnail, filename chip, tools menu,
+          and active agent chip in one view.
+        </p>
+      </div>
     </DocPage>
   );
 }
-
