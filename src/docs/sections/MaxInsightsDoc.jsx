@@ -277,10 +277,142 @@ function InsightsCapabilities() {
         sourceHint="Capture source: prosperna1 UI."
       />
 
+      <h3>8) Sales by product category</h3>
+      <ul className="doc-list">
+        <li>
+          Use case: "Show me my sales by product category", "Which category
+          sells the most?"
+        </li>
+        <li>
+          Groups sales data by <InlineCode>category</InlineCode> or{' '}
+          <InlineCode>product_type</InlineCode> to show which segments drive
+          the most revenue.
+        </li>
+        <li>Default: last 30 days unless you specify a date window.</li>
+      </ul>
+
+      <ImagePlaceholder
+        title="Sales by category breakdown"
+        filenameSuggestion="max-insights_sales-by-category.png"
+        description="Screenshot a sales-by-category answer showing categories ranked by revenue or quantity sold."
+        bullets={['Category names visible', 'Revenue or quantity per category', 'Generate Charts button visible']}
+        sourceHint="Capture source: prosperna1 UI."
+      />
+
+      <h3>9) Discount code performance</h3>
+      <ul className="doc-list">
+        <li>
+          Use case: "Which discount codes performed best last month?", "Show me
+          my coupon ROI."
+        </li>
+        <li>
+          Reports discount code usage, total discount amount, and conversion
+          impact.
+        </li>
+        <li>Default: last 30 days unless you specify a date window.</li>
+      </ul>
+
+      <ImagePlaceholder
+        title="Discount code performance"
+        filenameSuggestion="max-insights_discount-codes.png"
+        description="Screenshot a discount code performance reply listing codes with usage counts and amounts."
+        bullets={['Discount code names visible', 'Usage counts visible', 'Revenue impact or amounts shown']}
+        sourceHint="Capture source: prosperna1 UI."
+      />
+
+      <h3>10) Products list</h3>
+      <ul className="doc-list">
+        <li>
+          Use case: "Show my products", "List my current product catalog."
+        </li>
+        <li>
+          Returns a paginated list of products from your catalog for reference
+          within the Insights context.
+        </li>
+      </ul>
+
+      <h3>11) Contacts list</h3>
+      <ul className="doc-list">
+        <li>
+          Use case: "Show my contacts", "List recent customer signups."
+        </li>
+        <li>
+          Returns a list of contacts/leads from your CRM for reference within
+          the Insights context.
+        </li>
+      </ul>
+
+      <h3>12) SQL exploratory mode</h3>
+      <Callout title="Advanced: SQL data exploration" variant="info">
+        <p>
+          Max Insights can run SQL queries against approved datasets for
+          advanced exploratory analysis. This allows more flexible data slicing
+          than the standard report tools.
+        </p>
+      </Callout>
+      <ul className="doc-list">
+        <li>
+          <strong>Approved datasets</strong>:
+          <ul className="doc-list">
+            <li><InlineCode>orders.sales_daily</InlineCode> — Daily sales aggregates</li>
+            <li><InlineCode>orders.status_daily</InlineCode> — Daily order status counts</li>
+            <li><InlineCode>orders.sales_by_channel_daily</InlineCode> — Daily sales broken down by channel</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Limitations</strong>:
+          <ul className="doc-list">
+            <li>SELECT queries only — no data modification</li>
+            <li>No joins across datasets</li>
+            <li>Results are limited in row count for readability</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Use case</strong>: "Run a query to show me daily sales totals
+          for the last 14 days", "Show me order status counts grouped by week."
+        </li>
+      </ul>
+
+      <ImagePlaceholder
+        title="SQL query results"
+        filenameSuggestion="max-insights_sql-results.png"
+        description="Screenshot a SQL exploratory query result showing structured data returned from an approved dataset."
+        bullets={['Query context visible', 'Data rows returned', 'Dataset name referenced']}
+        sourceHint="Capture source: prosperna1 UI."
+      />
+
+      <h3>Chart types reference</h3>
+      <p>
+        When Max Insights generates charts, it selects the best chart type
+        based on the data shape. The available types are:
+      </p>
+      <ul className="doc-list">
+        <li>
+          <strong>Bar chart</strong> — For comparing values across categories
+          (e.g., sales by product).
+        </li>
+        <li>
+          <strong>Horizontal bar chart</strong> — For rankings (e.g., top
+          selling products, best marketing channels).
+        </li>
+        <li>
+          <strong>Area chart</strong> — For showing trends over time (e.g.,
+          daily sales, traffic trend).
+        </li>
+        <li>
+          <strong>Line chart</strong> — For time-series comparisons (e.g.,
+          current vs previous period).
+        </li>
+        <li>
+          <strong>Donut chart</strong> — For proportional breakdowns (e.g.,
+          order status distribution, payment status split).
+        </li>
+      </ul>
+
       <ImagePlaceholder
         title="Chart-eligible response (Generate Charts shown)"
         filenameSuggestion="max-insights_generate-charts-button.png"
-        description="Screenshot an Insights assistant message that shows the “Generate Charts” button."
+        description="Screenshot an Insights assistant message that shows the Generate Charts button."
         bullets={['Agent type is Max Insights', 'Button visible under the message']}
         sourceHint="Capture source: prosperna1 UI (Assistant message extras)."
       />
