@@ -40,12 +40,25 @@ If your task changes, switch to the matching specialist before you type your nex
 ## Prosperna Main Orchestrator (Max)
 Best for routing, shared context, and branding setup.
 
-- Route requests to the most relevant specialist agent
-- Keep context synchronized across specialist handoffs
-- Analyze attached visuals to improve downstream prompts
-- Generate a base logo for your store
-- Generate favicon and wordmark logo variations
-- Apply selected logo and favicon to your store branding
+### Direct capabilities (what Max does itself)
+
+#### Logo and branding
+
+- **Generate a base logo** — Max collects your brand preferences (offerings, style type, style approach, primary/secondary colors, accent colors, font preferences, and trend direction), then generates a logo using your store name and slogan from context.
+  - Style type: vertical or horizontal
+  - Style approaches: minimalist/flat, vintage/retro, geometric/techy, 3d/gradient, line art/outline, typography play
+  - Trend preference: timeless vs trendy
+- **Generate favicon and wordmark variations** — After a base logo exists, Max produces a favicon (small square icon) and a wordmark (text-only) variation from it.
+- **Apply logo and favicon to store branding** — Once you confirm your choices, Max updates your store's logo and favicon in one step. Max will only apply when you explicitly say "yes" — until then, assets stay in your Media Library.
+
+#### Image editing tools (also available via Max Image Editor)
+
+- **Background removal** — Remove backgrounds from product or brand images.
+- **Image quality enhancement** — Improve sharpness, clarity, and detail.
+- **Lighting adjustment** — Apply professional lighting styles (warm, cool, studio, etc.).
+- **Background replacement** — Replace backgrounds with generated scenes or reference images.
+
+All image editing tools require an image from your Media Library. If you request an edit without attaching an image, Max will ask you to select one first.
 
 ### What Max routes to other specialists
 
@@ -56,10 +69,11 @@ Best for routing, shared context, and branding setup.
 - Static page creation/editing and menu/navigation workflows -> Max Builder
 - Analytics and business performance workflows -> Max Insights
 
-### Ask this assistant when you want to
+### Plan restrictions
 
-- Create or update logo and favicon branding assets
-- Route to the correct specialist for image, social, content, page, or analytics tasks
+- **Free plan**: Blog Writer, SEO Meta Tags Generator, and Page Builder tools are locked. Max will show a plan upgrade prompt instead.
+- **Paid plan without Blog Writer app**: If the Blog Writer marketplace app is not installed, the Copywriter agent will not appear.
+- **Free trial**: Max checks if your free trial has already been claimed and may prompt you to activate it.
 
 ### Visual Intelligence: Explaining your images
 
@@ -72,30 +86,89 @@ This is especially helpful for:
 - **Context Sharing**: If Max explains an image in one chat turn, other specialists can
   reuse that context when generating content.
 
+---
+
 ## Max Image Editor
 Best for dedicated image editing and enhancement workflows.
 
-- Remove backgrounds from images
-- Enhance image quality
-- Adjust image lighting with style presets
-- Replace image backgrounds with generated scenes or reference images
+### Core tools
+
+1. **Background removal** — Remove backgrounds from any product or brand image, outputting a clean cutout. This is the most commonly used editing tool for preparing product photos.
+2. **Image quality enhancement** — Improve the overall visual quality of an image — sharpness, clarity, and detail. Ideal for phone camera photos or less-than-ideal conditions.
+3. **Lighting adjustment** — Apply professional lighting styles to your images. Describe the look you want (e.g., "warm natural lighting", "cool studio lighting", "soft diffused light", "bright daylight") and Max will translate it.
+4. **Background replacement** — Replace the background of a product image with a generated scene or a reference image. You can describe the desired background in text, or provide a reference image.
+
+### Media Library requirement
+
+Every Image Editor tool requires an image from your Media Library. If you request an edit without attaching an image, Max will ask you to select one first. All results are automatically saved back to your Media Library for reuse.
+
+### Multi-step editing
+
+You can chain multiple edits in a single chat session. For example:
+
+1. Remove the background from a product photo.
+2. Enhance the quality of the resulting image.
+3. Replace the background with a lifestyle scene for social media use.
+
+Each step uses the output from the previous one.
+
+### Cross-agent reuse
+
+Images edited here are saved to your Media Library. You can then use them with other Max specialists — for example, using an edited product photo in a Max Social Marketing campaign or applying it to a product listing via Max Merchandiser.
 
 ### Ask this assistant when you want to
 
 - Clean up or improve product and brand images quickly
 - Run multi-step edits in a single conversation
+- Prepare product-ready images before creating social posts or listings
+
+### Example prompts
+
+- "Remove the background from this product photo."
+- "Enhance the quality of this image and make it look sharper."
+- "Apply warm natural lighting to this product shot."
+- "Place this product on a modern kitchen counter with warm natural lighting."
+- "Remove the background, then replace it with a clean white studio backdrop."
+
+---
 
 ## Max Social Marketing
 Best for social campaign ideation and creative production flows.
 
-- Create social-ready campaign concepts and content direction
-- Produce post-ready creative angles aligned to business goals
-- Borrow image editing capabilities when campaign assets need visual changes
+### Campaign creative ideation
+
+Max Social Marketing can generate complete campaign concepts including hooks, captions, CTA angles, and content direction. Campaigns can be tailored to different goals:
+
+- **Awareness campaigns**: Focused on reach, impressions, and brand visibility
+- **Sales/conversion campaigns**: Focused on driving purchases, cart additions, and revenue
+- **Engagement campaigns**: Focused on comments, shares, and community building
+
+When you tell Max Social Marketing your campaign goal, it tailors the creative angles, copy tone, and CTA style accordingly.
+
+### Post-ready creative production
+
+- Post captions with tone and voice alignment
+- Hashtag suggestions relevant to your niche and audience
+- Content angles (benefit-led, feature-led, lifestyle-led)
+- Multi-variant post concepts from a single product asset
+
+### Image editing capabilities (tool leasing)
+
+Max Social Marketing can borrow image editing capabilities from the Image Editor specialist when campaign assets need visual changes. You do not need to switch agents — the Social Marketing specialist handles image editing behind the scenes when it is part of the social workflow.
 
 ### Ask this assistant when you want to
 
 - Turn product assets into social post ideas and campaign variants
 - Build goal-driven social creative tied to awareness or sales targets
+
+### Example prompts
+
+- "Create a 7-day social campaign plan for this product with awareness and sales goals."
+- "Turn this product image into 3 social post concepts with captions and CTA lines."
+- "Give me Instagram-ready post ideas for my new skincare line — targeting young professionals."
+- "What hashtags should I use for a Filipino audience interested in home cooking products?"
+
+---
 
 ### Media Library Integration & Attachments
 
@@ -107,32 +180,332 @@ Any image Max generates or identifies is automatically saved to your Media Libra
 - **Unified Catalog**: Apply edited product photos directly to listings.
 - **Persistent Context**: Sub-agents use your library as a shared visual memory.
 
-## Advanced Analytics (Max Insights)
+---
 
-Max Insights uses a dedicated suite of tools to analyze your store data. It can identify patterns that human observation might miss.
+## Max Insights
+Best for analytics and business performance questions.
 
 ### Sales Intelligence
 
 Max can break down your revenue using several dimensions:
 
-- **Sales by Category**: Identify which product groups are driving the most revenue.
-- **Discount Performance**: See which discount codes are most effective and how they impact margins.
-- **Top Sales Periods**: Identify peak buying times across various timeframes (Daily, Weekly, Monthly).
+- **Orders (recent listing)**: "Show my latest orders", "List unpaid orders", "How many completed orders do I have?" Default: last 30 days, page 1, limit 10. Filters: status, payment_status (when explicitly requested).
+- **Status breakdown**: Order status and payment status breakdowns for any period. Default: last 30 days.
+- **Total sales by channel**: Revenue breakdown by channel. Default: last 30 days.
+- **Top selling products**: Ranked by quantity sold / sales (not page views). Default: last 30 days.
+- **Peak sales periods**: Best day/week/month for sales. Can analyze broad history.
+- **Sales by product category**: Group by `category` or `product_type` to see which segments drive the most revenue.
+- **Discount code performance**: Usage counts, total discount amounts, and conversion impact per coupon.
 
 ### Traffic & Content Analysis
 
 Understand how users find and interact with your store:
 
-- **Traffic Sources**: See where your visitors are coming from (Direct, Social, Search).
-- **Content Engagement**: Identify your **Most Visited Blogs** and **Most Visited Products**.
-- **User Breakdown**: Differentiate between broad visitors and converted customers.
+- **Traffic sources**: Where visitors come from (Direct, Social, Search). Default: last 30 days.
+- **Traffic trend**: Daily visits/sessions trend. Default: last 30 days.
+- **New vs returning visitors**: Cohort breakdown. Default: last 30 days.
+- **Most visited product**: Ranked by page views. Links shown are customer-facing storefront links.
+- **Most visited blog**: Ranked by page views. Links shown are customer-facing storefront links.
+- **Products list**: Paginated list of products from your catalog for reference.
+- **Contacts list**: List of contacts/leads from your CRM for reference.
+
+### CRM (Leads)
+
+- **Latest leads**: "Show my last 10 leads" (maps to a `limit` parameter).
+- **Leads summary**: "How many new leads this week?" (reports how many became customers-with-orders). Channel/source filters: `store`, `guest_checkout`, `facebook`, `google`.
+
+### SQL exploratory mode
+
+Max Insights can run SQL queries against approved datasets for advanced exploratory analysis:
+
+- **Approved datasets**:
+  - `orders.sales_daily` — Daily sales aggregates
+  - `orders.status_daily` — Daily order status counts
+  - `orders.sales_by_channel_daily` — Daily sales broken down by channel
+- **Limitations**: SELECT queries only, no data modification, no joins across datasets, results limited in row count.
+- **Use case**: "Run a query to show me daily sales totals for the last 14 days", "Show me order status counts grouped by week."
 
 ### Visual Data & Charting
 
 Max doesn't just give you numbers; it generates visual reports.
 
-- **Dynamic Charts**: Ask Max to "show me a chart of my sales this month" to get a visual representation.
-- **Date Range Filtering**: Every insight can be filtered by specific date ranges (Last 7 days, 30 days, 90 days, or Custom).
+- **Dynamic charts**: Ask Max to "show me a chart of my sales this month" to get a visual representation.
+- **Chart types**: Bar, horizontal bar, area, line, donut — Max selects the best type based on the data shape.
+- **Date range filtering**: Every insight can be filtered by specific date ranges (7, 30, 90 days, or custom).
+- **Generate Charts button**: When Max returns chartable data, a "Generate Charts" button appears under the message. Clicking it sends a follow-up prompt that produces an inline Apex chart.
+
+### Hard rules
+
+- Max Insights is a business coach. It should not generate product descriptions, SEO meta tags, blog content, or edit pages — those belong to other agents.
+- Charts are generated on request only (when you explicitly ask for a chart/visualization or click Generate Charts).
+- List-style formatting (bullets/numbered lines) is preferred over markdown tables.
+- "Users" can mean website visitors or registered customers — Max will clarify if ambiguous.
+
+### Ask this assistant when you want to
+
+- Understand what is working in your store
+- Decide what to improve next based on data
+- Run advanced SQL queries against your store's data
+
+---
+
+## Max Merchandiser
+Best for product listing and catalog optimization.
+
+### Product creation workflow
+
+Max Merchandiser guides you through creating a new product from scratch:
+
+1. **Start creation** — Tell Max you want to create a new product. It asks whether physical or digital, and collects basic info (name, brand, description).
+2. **Category** — Max helps you select or create the right product category.
+3. **Identity fields** — SKU, brand name, and URL slug are set up (auto-generated when appropriate).
+4. **Descriptions** — Max generates product descriptions tailored to your target audience and key benefits.
+5. **Media** — Upload and organize product images and videos directly.
+6. **Pricing and stock** — Set price, compare-at price, unit cost, available stock, and low-stock threshold.
+7. **Measurements** — Dimensions (length, width, height) and weight with unit support (kg, g, lb, oz, cm, mm, in, ft).
+8. **SEO meta tags** — Generate optimized meta title and meta description for search visibility.
+9. **Submit** — The product is created in your catalog with all details filled in.
+
+### Product editing tools (when a product is in context)
+
+- **Update product identity** — Change name, brand, SKU, and slug.
+- **Update product category** — Move the product to a different category.
+- **Generate product descriptions** — AI-generated descriptions tailored to audience, features, and benefits.
+- **Update product descriptions** — Directly modify short or long description.
+- **Generate SEO meta tags** — Optimized meta title and description with keyword targeting. Requires explicit approval.
+- **Update SEO meta tags** — Directly modify existing meta title and description.
+- **Update pricing and stock** — Adjust price, compare-at price, unit cost, available stock, low-stock threshold.
+- **Update measurements** — Set physical dimensions and weight with multiple unit systems.
+- **Update product media** — Upload, add, or replace product images and videos.
+
+### Promotional reel creation
+
+- **Image quality pre-check** — Max validates that product images are suitable for reel generation.
+- **Reel generation** — A short promotional video generated using product images, name, and description.
+- **Background job** — Reels generate in the background. You can continue chatting and Max notifies you when ready.
+
+### Product list panel
+
+Open the product list panel to browse existing products and select one to work on. Accessible from the welcome screen card or the widget menu in the chat composer.
+
+### Tool switching
+
+Max Merchandiser uses different tool sets depending on context:
+- **Before product selection**: Only creation tools are available.
+- **After product selection**: Full editing tools become available.
+
+### Ask this assistant when you want to
+
+- Improve conversion on product pages by tailoring descriptions for specific audiences
+- Prepare better listings faster by automating SEO keyword research and meta-tagging
+- Launch a new product line with brand-consistent details and automatic SKU generation
+- Keep your catalog updated with precise measurements and inventory details from chat
+- Create short promotional reels for your products
+
+### Example prompts
+
+- "I want to create a new product. Walk me through it from the beginning."
+- "Help me improve the title and description for this product listing."
+- "Create a short promotional reel for this product."
+- "Generate SEO meta tags for this product."
+- "Update the price to ₱1,200 and set available stock to 50."
+- "Write a product description targeting young professionals who value convenience."
+- "Set the weight to 0.5 kg and dimensions to 10cm × 5cm × 3cm."
+
+---
+
+## Max Copywriter
+Best for taking a blog idea from a rough theme to a structured, SEO-aware draft you can publish from your store.
+
+Max Copywriter is backed by the **Blog Writer** experience: chat guides the steps, and the **Blog Writer** panel on the side holds your topic, title, keywords, outline, and the full article as they are filled in.
+
+### The 4-stage blog creation workflow
+
+#### Stage 1: Topic generation
+
+- **Vague idea → topic suggestions**: Start with a broad theme (e.g., "wellness tips", "AI tools") and Max generates specific topic suggestions.
+- **Specific topic → skip**: If you already have a specific topic (e.g., "Tips for grooming dogs at home"), Max confirms it and skips to Stage 2.
+
+#### Stage 2: Title generation
+
+Max collects additional context:
+- **Post type**: how-to/tutorial, listicle, opinion/editorial, case study, review/comparison, news update, storytelling/narrative, FAQ/problem-solving, behind-the-scenes
+- **Writing style**: formal, casual, conversational, professional, friendly
+- **Target audience**: entrepreneurs, students, professionals, consumers, beginners, experts
+- **Target region**: US, Philippines, global, Asia, Europe
+
+Then generates title suggestions.
+
+#### Stage 3: SEO keywords and outline
+
+Max generates:
+- **SEO keywords**: Primary keyword, secondary keywords, long-tail keywords, LSI (Latent Semantic Indexing) keywords
+- **Blog outline**: Structured section outline with suggested headings and key points
+
+Additional parameters:
+- **Tone**: professional, friendly, authoritative, educational, inspirational, humorous
+- **Word count**: 500, 1000, 1500, 2000, 2500, or 3000 words
+
+You must **approve** before Max proceeds to Stage 4.
+
+#### Stage 4: Full content generation
+
+Max writes the complete blog post. The generated content is written directly into the Blog Writer widget fields.
+
+### Blog Writer widget panel fields
+
+- Topic
+- Title
+- Keywords
+- Outline
+- Blog content (body)
+- SEO meta title
+- SEO meta description
+
+As Max completes each stage, it fills in the corresponding fields automatically.
+
+### Post-generation refinements (direct widget edits)
+
+After the draft is generated, ask Max to revise specific parts — updates go directly to Blog Writer fields:
+- Title, content/body, SEO meta title, SEO meta description
+
+### Tap-to-select options picker
+
+When Max asks you to pick among set choices (tone, length, format), use the tap options in the chat — one main choice per turn keeps the workflow smooth.
+
+### Finishing in the Blog Writer panel
+
+Use the panel to **save as a draft** (edit later) or **publish** when satisfied. Max can still help revise wording after the draft is shown.
+
+### Availability
+
+Blog writing may require an eligible **plan** and the **Blog Writer** capability for your store. If Max Copywriter does not appear in the agent list or Max explains the feature is unavailable, check your subscription and installed marketplace apps.
+
+### Example prompts
+
+- "I want to blog about sustainable packaging for small shops—help me narrow it to one strong topic."
+- "Topic is fixed: home workout mistakes for beginners. Suggest titles as a how-to for busy professionals in the Philippines, friendly tone."
+- "Show me the keyword set and outline before you write the full article."
+- "Shorten the introduction and make the CTA stronger—update the blog fields."
+- "Give me 5 blog topic ideas for my store."
+- "Help me write a blog post, please open blog writer widget."
+
+---
+
+## Max Builder
+Best for static pages, menu/navigation, and footer editing.
+
+### Page generation
+
+Available page types:
+
+- Home page
+- About Us page
+- Contact Us page
+- Warranty page
+- Products page
+- Privacy Policy page
+- Return Policy page
+- Terms of Service page
+- Custom pages (by slug)
+
+Before generating, Max validates the request against your store state (existing pages, plan restrictions, slug availability).
+
+### Page Builder help tools
+
+![Page Builder help tools menu](max-builder-help-tools)
+
+#### 1) Visual Editor
+
+- **What it does**: Click any element on the page and edit text, styling, and attributes with AI support.
+- **When to use**: You want to quickly change copy, spacing, colors, or style of a specific block.
+- **How to use**: Open Max Builder → Click Visual Editor → Click the element → Send a clear instruction.
+- **Pro tip**: Edit one area at a time for cleaner results and easier undo/redo.
+
+#### 2) Reorder
+
+- **What it does**: Drag-and-drop reordering of sections or elements on the page.
+- **When to use**: Change storytelling flow or improve conversion by changing page sequence.
+- **How to use**: Click Reorder → Drag the element → Drop → Review → Undo/redo if needed.
+- **Pro tip**: Start with major blocks first (hero, benefits, testimonials, CTA).
+
+#### 3) Select Element
+
+- **What it does**: Attaches a selected page element to your chat message so Max can use it as reference.
+- **When to use**: You want precise edits to one specific section.
+- **How to use**: Click Select Element → Click the target → Confirm attachment → Prompt Max.
+- **Pro tip**: If Max edits the wrong area, re-select and resend.
+
+#### 4) Page List
+
+- Open your existing pages and choose which page to edit.
+- Switch between pages for editing within Max Builder.
+- Visible when Max Builder is the selected agent.
+
+### Menu Editor mode
+
+For menu/navigation requests, Max opens the Menu Editor. The full tool surface includes:
+
+**Structure management**:
+- Add, remove, move, and update menu items
+- Replace link targets (point items to different pages, products, or categories)
+- Search available link targets
+
+**Design and styling**:
+- Layout changes
+- Logo update
+- Colors (background, text, hover)
+- Spacing (padding, margins)
+- Typography (font family, size, weight, letter spacing)
+- Sticky behavior toggle
+
+**Advanced**:
+- Menu modals (create, update, delete, attach, detach)
+- Undo last change
+
+Menu edits happen on a managed preset copy. You review changes before they go live.
+
+### Footer editing mode
+
+- Max activates footer mode first, then applies footer-only edits.
+- If no footer exists, Max asks for confirmation before generating one.
+- Footer edits are isolated from page content.
+- Footer can use deterministic links (store details, social links) and product lookups.
+
+### Stock image search
+
+Max Builder can search for stock photos from Pexels when building pages — for hero banners, product showcases, or about sections.
+
+### Legacy page migration
+
+- Creates a separate migrated page with a **`-max-version`** suffix.
+- Proposes extracted theme/design memory first before persisting.
+- Waits for your explicit approval before saving migration changes.
+
+### Custom page support
+
+- Max Builder can open supported custom pages by slug.
+- Publish validates slugs; Max can create a unique slug if needed.
+- On publish success, Max returns the full live page URL.
+- Product-listing cards support share actions.
+
+### Single-page editing
+
+Max Builder enforces one page at a time. Switch or close the current page before opening another.
+
+### Example prompts
+
+- "Build a homepage for my store."
+- "Create an About page for my store."
+- "Build a 'Return Policy' page for my electronics store with a formal tone."
+- "Add a new 'Special Offers' link to my header menu."
+- "Remove the 'Blog' link from my navigation menu."
+- "Change the menu colors to match my brand — dark navy background with white text."
+- "Make my menu sticky so it stays visible when scrolling."
+- "Open my footer editor and add contact details plus social links."
+- "Migrate my legacy About page to a Max-editable version."
+
+---
 
 ## Onboarding Assistant
 Best for first-time store setup.
@@ -146,261 +519,6 @@ Best for first-time store setup.
 
 - Launch your store quickly from scratch
 - Complete required setup steps in order
-
----
-
-## Max Insights
-Best for analytics and business performance questions.
-
-- Review orders and sales trends
-- Check leads and traffic insights
-- Find top products and peak sales periods
-- Get recommended next actions
-
-### Ask this assistant when you want to
-
-- Understand what is working in your store
-- Decide what to improve next based on data
-
----
-
-## Max Merchandiser
-Best for product listing and catalog optimization.
-
-- **Create product entries** — Build new listings from scratch with AI-guided categories and identity fields (SKU, brand, and slug).
-- **Improve content** — Generate high-converting product descriptions and SEO-optimized meta tags by defining your target audience and key benefits.
-- **Manage media** — Upload and organize product images and videos directly.
-- **Update store controls** — Adjust pricing, stock levels, and physical measurements (dimensions and weight) in real-time.
-
-### Ask this assistant when you want to
-
-- Improve conversion on product pages by tailoring descriptions for specific target audiences.
-- Prepare better listings faster by automating SEO keyword research and meta-tagging.
-- Launch a new product line with brand-consistent details and automatic SKU generation.
-- Keep your catalog updated with precise measurements and inventory details directly from chat.
-
----
-
-## Max Copywriter
-Best for taking a blog idea from a rough theme to a structured, SEO-aware draft you can publish from your store.
-
-Max Copywriter is backed by the **Blog Writer** experience: chat guides the steps, and the **Blog Writer** panel on the side holds your topic, title, keywords, outline, and the full article as they are filled in.
-
-### What you can do
-
-- **Topic ideas** — Start from a broad theme (for example “healthy meal prep”) and get focused topic suggestions. If you already have a specific topic, say it clearly and Max can move on without re-brainstorming.
-- **Titles and format** — Get title options once Max knows your topic, **post type** (how-to, listicle, opinion, case study, review, news, story, FAQ-style, behind-the-scenes, and similar), **style** (such as formal or conversational), **audience**, and **region**.
-- **SEO keywords and outline** — Receive primary and supporting keywords plus a section outline. Review and approve (or adjust in chat) before the final draft is written.
-- **Full post** — Generate the article at a length you choose (for example short, medium, or long-form ranges Max will confirm with you).
-- **Refinements** — After content exists in the Blog Writer panel, ask Max to change the **headline**, **article body**, or **SEO title / description**. Max applies these updates directly to widget fields so you do not need to copy-paste.
-
-### How the flow usually goes
-
-1. **Topic** — Vague idea → suggested topics, or you confirm a topic you already picked.
-2. **Title** — Max gathers post type, audience, region, and style, then suggests titles.
-3. **Keywords and outline** — Max proposes SEO keywords and structure; you confirm before step 4.
-4. **Full content** — Max writes the post from the approved outline and keywords.
-
-When Max asks you to pick among set choices (tone, length, format, and similar), **use the tap options** in the chat when they appear—one main choice per turn keeps the workflow smooth.
-
-### Finishing in the Blog Writer panel
-
-When the draft is ready, use the panel to **save as a draft** (edit later in your blog tools) or **publish** when you are satisfied. Max can still help you revise wording after the draft is shown.
-
-### Direct widget edits (no copy-paste)
-
-For post-generation revisions, Max updates Blog Writer fields directly
-(title, content/body, SEO meta title, SEO meta description).
-
-### Ask this assistant when you want to
-
-- Publish useful content on a regular rhythm without staring at a blank page
-- Improve clarity, tone, and structure for readers and search
-- Move from “I only know the general theme” to an outline and full post in guided steps
-
-### Example prompts
-
-- "I want to blog about sustainable packaging for small shops—help me narrow it to one strong topic."
-- "Topic is fixed: home workout mistakes for beginners. Suggest titles as a how-to for busy professionals in the Philippines, friendly tone."
-- "Show me the keyword set and outline before you write the full article."
-- "Shorten the introduction and make the CTA stronger—update the blog fields."
-
-### Availability
-
-- Blog writing may require an eligible **plan** and the **Blog Writer** capability for your store. If Max Copywriter does not appear in the agent list or Max explains the feature is unavailable, check your subscription and installed marketplace apps.
-
----
-
-## Max Builder
-Best for static pages and menu/page structure tasks.
-
-- Generate static pages
-- Update menu and page structure
-- Improve layout and page content direction
-
-### Ask this assistant when you want to
-
-- Create or update important store pages
-- Organize site navigation and structure
-
-### Create pages with Max Builder
-
-Available page generator options usually include:
-
-- Home page
-- About Us page
-- Contact Us page
-- Warranty page
-- Products page
-- Privacy Policy page
-- Return Policy page
-- Terms of Service page
-
-You can ask directly for a page, such as:
-
-- "Please create a Contact Us page for my store."
-- "Generate an About Us page with a friendly brand voice."
-
-If you are not sure what is supported, ask first:
-
-- "Which page types can you create for me in Max Builder?"
-
-Then choose one from the list and continue with your preferred tone, style, or content requirements.
-
-### Page Builder help tools (how to use each one)
-
-![Page Builder help tools menu](max-builder-help-tools)
-
-### New option in Max Builder: Page List
-
-When your selected agent is Max Builder, a new option called Page List becomes visible in the builder menu.
-
-What it is for:
-
-- Open your existing pages and choose which page to edit.
-- Continue editing pages directly in Max Builder.
-- Use this in both Max chat and onboarding-related page work when supported.
-
-How to use it:
-
-1. Switch to Max Builder.
-2. Open the builder menu (grid/menu icon).
-3. Click Page List.
-4. Select the page you want to edit.
-5. Continue editing with Visual Editor, Reorder, or Select Element.
-
-### Menu and footer editing modes
-
-- **Menu Editor mode**: For menu/navigation requests, Max opens Menu Editor and can update item structure, link targets, layout, logo, sticky behavior, and style settings.
-- **Footer mode**: For footer requests, Max opens footer context first, then applies footer-only edits.
-- If a footer does not exist yet, Max may ask for confirmation before generating an initial footer draft.
-
-### Custom page support
-
-Max Builder can open supported custom pages by slug.
-- If open is blocked, Max returns explicit guidance so you can recover cleanly.
-- Publish validates provided slugs; if a slug is stale or missing, Max can create
-  a unique slug first, then continue publish.
-- Product-listing cards now support a share action (native share, clipboard
-  fallback, or disabled state when no URL exists).
-- Example: "Open my custom page with slug `summer-sale` and improve the hero."
-
-### Limitation: legacy pages are not supported
-
-If you attach a page and Max replies that it is not supported, this usually means the page is a legacy page created in the old Page Builder (GrapesJS).
-
-What that message means:
-
-- The selected page cannot be directly edited in the current Max Builder workflow.
-- Max can still help with supported pages (for example Home, About Us, Contact Us, Warranty, Products, and Business Policies) and navigation/menu updates.
-- Max can still suggest layout or content improvements in chat, even when direct editing is blocked.
-
-What you can do next:
-
-1. Open Page List and pick a supported page.
-2. Ask Max to migrate the legacy page to a new AI-editable version.
-3. Ask Max for copy/layout guidance, then apply the changes manually if needed.
-
-### Legacy migration behavior
-
-When migration is available, Max Builder now:
-
-- creates a separate migrated page with a **`-max-version`** suffix to avoid slug/name conflicts
-- proposes extracted theme/design memory first before persisting it
-- waits for your approval before saving migration-related memory changes
-
-#### 1) Visual Editor
-
-What it does:
-
-- Lets you click any element on the page and edit text, styling, and attributes with AI support.
-
-When to use it:
-
-- You want to quickly change copy, spacing, colors, or style of a specific block.
-- You already know the section you want to edit.
-
-How to use it:
-
-1. Open Max Builder.
-2. Click Visual Editor.
-3. Click the exact element you want to edit.
-4. Send a clear instruction (example: "Make this headline shorter and bolder").
-
-Pro tip:
-
-- Edit one area at a time for cleaner results and easier undo/redo.
-
-#### 2) Reorder
-
-What it does:
-
-- Allows drag-and-drop reordering of sections or elements on the page.
-
-When to use it:
-
-- You want to change storytelling flow (for example: move testimonials above product grid).
-- You want to improve conversion by changing page sequence.
-
-How to use it:
-
-1. Click Reorder.
-2. Drag the element to its new position.
-3. Drop and review spacing/visual flow.
-4. Undo/redo if needed.
-
-Pro tip:
-
-- Start with major blocks first (hero, benefits, testimonials, CTA), then fine-tune smaller parts.
-
-#### 3) Select Element
-
-What it does:
-
-- Attaches a selected page element to your chat message so Max can use it as reference.
-
-When to use it:
-
-- You want precise edits to one specific section.
-- You need analysis or rewrite based on a selected element.
-
-How to use it:
-
-1. Click Select Element.
-2. Click the target item on your page.
-3. Confirm it is attached to your message.
-4. Prompt Max with the action you want (example: "Rewrite this section to sound more premium").
-
-Pro tip:
-
-- If Max edits the wrong area, re-select the exact element and resend your prompt.
-
-### Publish confirmation behavior
-
-When a page publish succeeds, Max may return:
-
-- a clearer success message in chat
-- the full live page URL (when domain/store mapping is available)
 
 ---
 
@@ -491,6 +609,9 @@ Add context:
 - "Help me create a blog from start to finish about meal prep for busy professionals—friendly, expert tone."
 - "I approve the outline; generate the full post at medium length."
 - "Draft a clean Contact page for a custom furniture shop in Cebu."
+- "Run a SQL query to show me daily sales totals for the last 14 days."
+- "Create a 7-day social campaign plan for this product with awareness and sales goals."
+- "Remove the background from this product photo and place it on a kitchen counter."
 
 ---
 
