@@ -1,32 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Sora:wght@400;500;600;700&display=swap");
-
-:root {
-  --brand-purple: #9d38f8;
-  --text-primary: #1a1f33;
-
-  font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
-  color: var(--text-primary);
-  background-color: #ededf2;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap");
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
-  margin: 0;
-  color: var(--text-primary);
-  background:
-    radial-gradient(circle at 7% 5%, rgba(157, 56, 248, 0.14), transparent 28%),
-    radial-gradient(circle at 94% 12%, rgba(88, 94, 117, 0.15), transparent 26%),
-    linear-gradient(180deg, #f1f1f6, #e5e6ee);
-  min-height: 100vh;
-}
-
-#root {
-  min-height: 100vh;
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }

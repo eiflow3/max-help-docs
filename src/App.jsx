@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import {
   Sparkles,
-  Zap,
   Layout,
   BarChart3,
   ShoppingBag,
   PenTool,
-  Image as ImageIcon,
-  ShieldAlert,
-  Lightbulb,
-  CheckCircle2,
-  Video,
-  History,
-  Eye,
   FileImage,
+  ShieldAlert,
+  Video,
+  Home,
+  Search,
+  BookOpen,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+
 import "./App.css";
 
-// Asset Imports
-import maxLogo from "./assets/max-logo.png";
+import { Sidebar } from "./components/Sidebar";
 
 // Doc Section Imports
+import { OverviewDoc } from "./docs/sections/OverviewDoc";
+import { FindAgentsDoc } from "./docs/sections/FindAgentsDoc";
+import { OnboardingDoc } from "./docs/sections/OnboardingDoc";
 import { MainOrchestratorDoc } from "./docs/sections/MainOrchestratorDoc";
 import { ImageEditorDoc } from "./docs/sections/ImageEditorDoc";
 import { SocialMarketingDoc } from "./docs/sections/SocialMarketingDoc";
@@ -29,205 +29,131 @@ import { MerchandiserDoc } from "./docs/sections/MerchandiserDoc";
 import { CopywriterDoc } from "./docs/sections/CopywriterDoc";
 import { BuilderDoc } from "./docs/sections/BuilderDoc";
 import { MaxInsightsDoc } from "./docs/sections/MaxInsightsDoc";
+import { GuardrailsDoc } from "./docs/sections/GuardrailsDoc";
 
-const SparkleBg = () => (
-  <>
-    <div className="sparkle" style={{ top: "10%", left: "5%", width: "300px", height: "300px" }} />
-    <div className="sparkle" style={{ top: "60%", right: "5%", width: "400px", height: "400px" }} />
-  </>
-);
-
-const PromptCard = ({ tag, text }) => (
-  <motion.div
-    className="prompt-card"
-    whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0,0,0,0.05)" }}
-    whileTap={{ scale: 0.98 }}
-  >
-    <span className="prompt-tag">{tag}</span>
-    <p>{text}</p>
-  </motion.div>
-);
+const tabs = [
+  {
+    id: "overview",
+    label: "Overview",
+    iconEl: <Home size={16} />,
+    keywords: ["home", "intro", "about max", "what is max", "getting started"],
+  },
+  {
+    id: "find-agents",
+    label: "Find Agents",
+    iconEl: <Search size={16} />,
+    keywords: ["switch agent", "agent picker", "composer", "how to switch"],
+  },
+  {
+    id: "onboarding",
+    label: "Onboarding",
+    iconEl: <BookOpen size={16} />,
+    keywords: ["setup", "store setup", "first steps", "getting started"],
+  },
+  {
+    id: "max",
+    label: "Max Orchestrator",
+    iconEl: <Sparkles size={16} />,
+    keywords: ["main orchestrator", "routing", "logo", "branding", "favicon", "wordmark"],
+  },
+  {
+    id: "image-editor",
+    label: "Image Editor",
+    iconEl: <FileImage size={16} />,
+    keywords: ["background removal", "quality", "lighting", "photo", "image", "bg replace"],
+  },
+  {
+    id: "social-marketing",
+    label: "Social Marketing",
+    iconEl: <Video size={16} />,
+    keywords: ["campaign", "post", "hashtag", "social", "instagram", "facebook", "caption"],
+  },
+  {
+    id: "merchandiser",
+    label: "Merchandiser",
+    iconEl: <ShoppingBag size={16} />,
+    keywords: ["product", "listing", "seo", "pricing", "promo reel", "catalog"],
+  },
+  {
+    id: "copywriter",
+    label: "Copywriter",
+    iconEl: <PenTool size={16} />,
+    keywords: ["blog", "article", "writing", "draft", "content", "copywriting"],
+  },
+  {
+    id: "builder",
+    label: "Builder",
+    iconEl: <Layout size={16} />,
+    keywords: ["page", "menu", "footer", "visual editor", "builder", "layout"],
+  },
+  {
+    id: "insights",
+    label: "Insights",
+    iconEl: <BarChart3 size={16} />,
+    keywords: ["analytics", "sales", "traffic", "leads", "chart", "report", "data"],
+  },
+  {
+    id: "guardrails",
+    label: "Guardrails",
+    iconEl: <ShieldAlert size={16} />,
+    keywords: ["safety", "rules", "limits", "plan gated", "restrictions", "best practices"],
+  },
+];
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState("max");
-
-  const tabs = [
-    { id: "max", label: "Max Orchestrator", icon: <Sparkles className="tab-icon" /> },
-    { id: "image-editor", label: "Image Editor", icon: <FileImage className="tab-icon" /> },
-    { id: "social-marketing", label: "Social Marketing", icon: <Video className="tab-icon" /> },
-    { id: "merchandiser", label: "Merchandiser", icon: <ShoppingBag className="tab-icon" /> },
-    { id: "copywriter", label: "Copywriter", icon: <PenTool className="tab-icon" /> },
-    { id: "builder", label: "Builder", icon: <Layout className="tab-icon" /> },
-    { id: "insights", label: "Insights", icon: <BarChart3 className="tab-icon" /> },
-    { id: "guardrails", label: "Guardrails", icon: <ShieldAlert className="tab-icon" /> },
-  ];
+  const [activeTab, setActiveTab] = useState("overview");
 
   const renderContent = () => {
     switch (activeTab) {
+      case "overview":
+        return <OverviewDoc onNavigate={setActiveTab} />;
+      case "find-agents":
+        return <FindAgentsDoc />;
+      case "onboarding":
+        return <OnboardingDoc />;
       case "max":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <MainOrchestratorDoc />
-          </motion.section>
-        );
+        return <MainOrchestratorDoc />;
       case "image-editor":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <ImageEditorDoc />
-          </motion.section>
-        );
+        return <ImageEditorDoc />;
       case "social-marketing":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <SocialMarketingDoc />
-          </motion.section>
-        );
+        return <SocialMarketingDoc />;
       case "merchandiser":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <MerchandiserDoc />
-          </motion.section>
-        );
+        return <MerchandiserDoc />;
       case "copywriter":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <CopywriterDoc />
-          </motion.section>
-        );
+        return <CopywriterDoc />;
       case "builder":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <BuilderDoc />
-          </motion.section>
-        );
+        return <BuilderDoc />;
       case "insights":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}>
-            <MaxInsightsDoc />
-          </motion.section>
-        );
+        return <MaxInsightsDoc />;
       case "guardrails":
-        return (
-          <motion.section initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="panel">
-            <div className="kicker">Safety & Pro-Tips</div>
-            <h2>Max Guardrails</h2>
-            <p>Ensure accurate and performant results by following these best practices.</p>
-
-            <div className="guardrails">
-              <div className="guardrail-item">
-                <ShieldAlert className="guardrail-icon" />
-                <div>
-                  <strong>Legacy Pages Removal</strong>
-                  <p className="muted">Pages built with GrapesJS (older editor) cannot be directly edited. <strong>Fix:</strong> Rebuild them as modern pages via Max Builder, or ask Max to migrate them.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <Lightbulb className="guardrail-icon" style={{ color: "#3b82f6" }} />
-                <div>
-                  <strong>Step-by-Step Focus</strong>
-                  <p className="muted">Work in steps: confirm the outline before generating the full draft for better precision.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <History className="guardrail-icon" style={{ color: "#f59e0b" }} />
-                <div>
-                  <strong>Catalog Sync Latency</strong>
-                  <p className="muted">Inventory updates may take a few seconds to reflect across all visual elements. Allow sync to complete.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <CheckCircle2 className="guardrail-icon" style={{ color: "#10b981" }} />
-                <div>
-                  <strong>Human Final Review</strong>
-                  <p className="muted">Always review financial settings (Pricing, Tax) and legal copy before publishing to live customers.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <ShieldAlert className="guardrail-icon" style={{ color: "#ec4899" }} />
-                <div>
-                  <strong>Plan-Gated Features</strong>
-                  <p className="muted">Blog Writer, SEO Meta Tags Generator, and Page Builder tools are locked on the Free plan. Max will show a plan upgrade prompt when you try to use them.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <ImageIcon className="guardrail-icon" style={{ color: "#6366f1" }} />
-                <div>
-                  <strong>Image Required for Editing</strong>
-                  <p className="muted">All image editing tools (background removal, quality enhancement, lighting, background replacement) require an image from your Media Library. Max will ask you to attach one if missing.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <Eye className="guardrail-icon" style={{ color: "#0ea5e9" }} />
-                <div>
-                  <strong>Charts Are On-Request</strong>
-                  <p className="muted">Max Insights only generates chart visualizations when you explicitly ask for one or click the "Generate Charts" button.</p>
-                </div>
-              </div>
-              <div className="guardrail-item">
-                <Zap className="guardrail-icon" style={{ color: "#f97316" }} />
-                <div>
-                  <strong>Single-Page Editing</strong>
-                  <p className="muted">Max Builder enforces one page at a time. Publish or close the current page before opening another.</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
-        );
+        return <GuardrailsDoc />;
       default:
         return null;
     }
   };
 
   return (
-    <main className="app">
-      <SparkleBg />
-      <header className="hero">
-        <div className="hero-media">
-          <motion.img
-            src={maxLogo}
-            alt="Max AI Logo"
-            className="hero-avatar"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            style={{ borderRadius: "20px" }}
-          />
-        </div>
-        <div>
-          <div className="kicker">Intelligent Assistance</div>
-          <h1>Meet Max.</h1>
-          <p className="hero-subtitle">
-            Your conversational partner for building and growing your store.
-          </p>
-        </div>
-      </header>
+    <div className="app-shell">
+      <Sidebar tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <nav className="top-tabs">
-        {tabs.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => setActiveTab(t.id)}
-            className={`tab ${activeTab === t.id ? "active" : ""}`}
-            style={{ border: "none", outline: "none" }}
+      <div className="main-content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
           >
-            {t.icon}
-            {t.label}
-          </button>
-        ))}
-      </nav>
+            {renderContent()}
+          </motion.div>
+        </AnimatePresence>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          className="content"
-          key={activeTab}
-        >
-          {renderContent()}
-        </motion.div>
-      </AnimatePresence>
-
-      <footer style={{ marginTop: "4rem", textAlign: "center", opacity: 0.5, fontSize: "0.8rem", paddingBottom: "2rem" }}>
-        &copy; {new Date().getFullYear()} Prosperna Inc. All rights reserved.
-      </footer>
-    </main>
+        <footer className="app-footer">
+          &copy; {new Date().getFullYear()} Prosperna Inc. All rights reserved.
+        </footer>
+      </div>
+    </div>
   );
 };
 

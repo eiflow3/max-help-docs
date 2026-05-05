@@ -11,7 +11,7 @@ export function DocPage({
   badges = [],
 }) {
   return (
-    <section className={join('panel doc-page', className)}>
+    <section className={join('doc-page', className)}>
       <header className="doc-page__header">
         <div className="doc-page__titleRow">
           <h2 className="doc-page__title">{title}</h2>
